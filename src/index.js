@@ -1,29 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import Words from "./words";
 import "./styles.css";
 
 class Example extends React.Component {
   state = {
     text: "",
-    bubble: ""
+    bubble: []
+  };
+  counter = 0;
+
+  makeBubble = () => {
+    return {
+      id: this.counter++,
+      value: this.state.text
+    };
   };
 
   takeText = event => {
     this.setState({ text: event.target.value });
   };
 
-  makeChain = () => {
-    this.setState({ bubble: this.state.text });
+  addBubble = () => {
+    this.setState({ bubble: [...this.state.bubble, this.makeBubble()] });
   };
+
   render() {
     return (
       <div className="App">
         <input type="text" value={this.state.text} onChange={this.takeText} />
-        <button className="newChainBtn" onClick={this.makeChain}>
+
+        <button className="newChainBtn" onClick={this.addBubble}>
           Create New Chain
         </button>
-        <div className="textBubble">{this.state.bubble}</div>
+        <Words words={this.state.bubble} />
       </div>
     );
   }
