@@ -39,7 +39,7 @@ class App extends React.Component {
         <button className="newChainBtn" onClick={this.addBubble}>
           Create New Chain
         </button>
-        <Words words={this.state.bubble} />
+        <Words texts={this.state.bubble} />
       </div>
     );
   }
