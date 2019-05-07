@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./words.css";
 class Words extends React.PureComponent {
   render() {
     return (
