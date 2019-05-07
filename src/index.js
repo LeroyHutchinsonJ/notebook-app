@@ -10,7 +10,6 @@ class Bev extends React.Component {
   };
   counter = 0;
 
-  //Need to get rid of bullet points
   makeBubble = () => {
     return {
       id: this.counter++,
