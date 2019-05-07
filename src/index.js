@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import Words from "./words";
 import "./styles.css";
 
-class Example extends React.Component {
+class Bev extends React.Component {
   state = {
     text: "",
     bubble: []
   };
   counter = 0;
 
+  //Need to get rid of bullet points
   makeBubble = () => {
     return {
       id: this.counter++,
@@ -40,4 +41,4 @@ class Example extends React.Component {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Example />, rootElement);
+ReactDOM.render(<Bev />, rootElement);
